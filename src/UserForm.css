@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.userForm {
+    font-family: Arial, sans-serif;
+    background-color: coral;
+}
+.userForm>button {
+    background-color: lightblue;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+} 
