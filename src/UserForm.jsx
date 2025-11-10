@@ -1,15 +1,30 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import './UserForm.css';
+import UserList from './UserList';
 
 export default function UserForm() {
-    const [formData, setFormData] = React.useState({
+    const [formData, setFormData] = useState({
         firstName: "",
         age: "",
     })
     
-    const [users, setUsers] = React.useState([
+    const [users, setUsers] = useState([
         { id: 1, firstName: "Alice", age: 25 },
     ])
+
+
+  // 🔹 Učitaj korisnike iz localStorage kad se komponenta pokrene
+     useEffect(() => {
+    const savedUsers = JSON.parse(localStorage.getItem("users"));
+    if (savedUsers) {
+      setUsers(savedUsers);
+    }
+  }, []); // ← samo jednom, pri pokretanju
+
+  // 🔹 Čuvaj korisnike svaki put kad se promeni lista
+  useEffect(() => {
+    localStorage.setItem("users", JSON.stringify(users));
+  }, [users]); // ← reaguje kad se users promeni
 
     function handleSubmit(event) {
             event.preventDefault()
@@ -25,7 +40,9 @@ export default function UserForm() {
         }]);
         console.log("Form submitted:", formData)
         setFormData({ firstName: "", age: "" });
-
+    }
+    const deleteUser = (id) => {
+        setUsers(users.filter(user => user.id !== id));
     }
   return (
     <div className='userForm'>UserForm
@@ -51,9 +68,8 @@ export default function UserForm() {
             <button type="submit">Submit</button>
         </form>
         <h3>name : {formData.firstName} - age : {formData.age}</h3>
-        {users.map(user => (<div key={user.id}>
-            <h4>{user.firstName} - {user.age}</h4>
-        </div>))}
+        
+        <UserList users={users} deleteUser={deleteUser}/>
     </div>  
   )
 }
