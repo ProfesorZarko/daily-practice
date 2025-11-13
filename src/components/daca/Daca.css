@@ -1,0 +1,21 @@
+.mainDaca{
+    margin: none;
+    padding: none;
+    width: 1124px;
+}
+.upperDaca{
+    display: flex;
+    flex-direction: row;
+}
+.userForm , .upperMiddle, .upperRight{
+    margin: 12px;
+    width: 33%;
+}
+.upperMiddle{
+    background-color: lightblue;
+    height: 200px;
+}
+.upperRight{
+    background-color: slategray;
+    height: 18em;
+}

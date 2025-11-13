@@ -1,0 +1,24 @@
+.flex-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* horizontalno poravnanje */
+  align-items: center;     /* vertikalno poravnanje */
+  gap: 20px;               /* razmak između box-ova */
+  height: 50vh;           /* zauzmi visinu ekrana */
+  background-color: coral;
+}
+
+.box {
+  width: 100px;
+  height: 100px;
+  color: white;
+  font-size: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 12px;
+}
+
+.red { background: goldenrod; }
+.green { background: slategray; }
+.blue { background: violet; }
