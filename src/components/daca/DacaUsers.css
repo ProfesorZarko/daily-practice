@@ -1,0 +1,45 @@
+.user {
+  list-style: none;
+  padding: 10px 15px;
+  margin: 5px 0;
+  background: #aa8181;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  transition: all 0.2s ease-in-out;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: black;
+  width: 60%;
+}
+
+.user:hover {
+  background: #e6f0ff;
+  transform: scale(1.02);
+  cursor: pointer;
+}
+
+.user.active {
+  background: #d0e6ff;
+  border-color: #4a90e2;
+  transform: scale(1.03);
+}
+
+.user button {
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 6px 10px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.user button:hover {
+  background: darkred;
+}
+ul{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
